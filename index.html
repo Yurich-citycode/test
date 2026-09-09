@@ -56,10 +56,13 @@
   .navlinks{ display:flex; gap:34px; font-size:12px; font-weight:600; letter-spacing:.04em; text-transform:uppercase; }
   .navlinks a{ text-decoration:none; color:var(--ink); opacity:.7; padding-bottom:3px; border-bottom:1px solid transparent; transition:opacity .2s, border-color .2s, color .2s; }
   .navlinks a:hover{ opacity:1; border-color:var(--lime); color:var(--lime); }
-  @media (max-width:760px){ .navlinks{ display:none; } }
+  @media (max-width:760px){
+  .nav{flex-wrap:wrap;gap:12px}
+  .navlinks{display:flex;flex-wrap:wrap;gap:12px 16px;width:100%}
+}
 
   /* ================= HERO ================= */
-  .hero{ position:relative; min-height:94vh; display:flex; align-items:center; overflow:hidden; }
+  .hero{ position:relative; min-height:100svh; display:flex; align-items:center; overflow:hidden; } @media (max-width:900px){   .hero{min-height:auto;padding:20px 0 40px}   .hero-portrait{position:relative;top:auto;right:auto;transform:none;width:min(92vw,420px);margin:24px auto 0;opacity:.9} }
   .hero-bg{ position:absolute; top:-8%; left:0; right:0; height:118%; z-index:0; will-change:transform; }
   .hero-portrait{
     position:absolute; right:0; top:50%; transform:translateY(-50%);
@@ -252,9 +255,10 @@
   }
   @keyframes auraPulse{ 0%,100%{ opacity:.55; transform:scale(1); } 50%{ opacity:1; transform:scale(1.1); } }
   .kc-photo-wrap{
-    position:relative; z-index:1; width:100%; max-width:760px; transform-origin:50% 8%;
+    position:relative; z-index:1; width:100%; max-width:980px; transform-origin:50% 8%;
     animation:idle-sway 7s ease-in-out infinite;
   }
+  @media (max-width:900px){ .kc-photo-wrap{max-width:100%} }
   @keyframes idle-sway{ 0%,100%{ transform:rotate(-1.6deg);} 50%{ transform:rotate(1.6deg);} }
   .kc-photo{
     display:block; width:100%; height:auto;
@@ -750,7 +754,7 @@
       if(en.isIntersecting){ w.classList.add('wiped'); }
       else{ w.classList.remove('wiped'); }
     });
-  }, { threshold:0.28 });
+  }, { threshold:0.12 });
   document.querySelectorAll('section.chapter').forEach(function(el){ wipeIo.observe(el); });
 
   /* ---------- cursor spotlight in hero ---------- */
