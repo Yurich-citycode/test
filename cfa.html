@@ -47,6 +47,9 @@
   .foot{color:var(--muted);font-size:16px;display:flex;gap:10px;align-items:flex-start;}
   .foot .star{font-size:22px;line-height:1;font-weight:800;}
   footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;color:var(--muted);font-size:13px;margin-top:48px;}
+  .cta{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0 28px}
+  .cta a{display:inline-block;padding:12px 16px;background:#111;color:#fff;font-weight:800;text-decoration:none}
+  .cta a.alt{background:transparent;color:#111;border:2px solid #111}
   @media print{
     body{print-color-adjust:exact;-webkit-print-color-adjust:exact;}
     .page{padding:16mm;max-width:none;}
@@ -67,6 +70,7 @@
       <div class="logo">YuRich<i></i></div>
       <div class="tag">RWA → ЦФА</div>
     </header>
+    <p><a href="index.html">← YurichHub</a></p>
 
     <h1>МЫ НЕ ТОКЕНИЗИРУЕМ</h1>
     <div class="glitch" data-text="АКТИВ"><span>АКТИВ</span><span class="star">*</span></div>
@@ -139,6 +143,11 @@
 
     <h2>Старт</h2>
     <p class="start">Созвон → счёт 80 000 ₽ → документы → письмо да/нет → если да, договор на сборку выпуска.</p>
+    <div class="cta">
+  <a href="https://t.me/PavelYuRichRWA" target="_blank" rel="noopener">Написать в Telegram</a>
+  <a class="alt" href="https://t.me/YuRichRWA" target="_blank" rel="noopener">Канал курса</a>
+  <a class="alt" href="index.html">На хаб</a>
+    </div>
 
     <div class="foot">
       <div class="star">*</div>
@@ -147,7 +156,7 @@
 
     <footer>
       <div>YuRich · условия конкретной сделки — в договоре</div>
-      <div>@PavelYuRichRWA</div>
+      <div><a href="https://t.me/PavelYuRichRWA" target="_blank" rel="noopener">@PavelYuRichRWA</a></div>
     </footer>
   </div>
 </body>
