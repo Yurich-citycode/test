@@ -340,16 +340,15 @@
   .thesis .signature{ margin-top:26px; font-size:11.5px; font-weight:700; letter-spacing:.1em; color:var(--ink-dim); text-transform:uppercase; }
 
 .mark{
-  width:92px;height:92px;object-fit:cover;display:block;border:none;background:transparent;
-  -webkit-mask-image:radial-gradient(circle at 50% 50%, #000 62%, transparent 78%);
-  mask-image:radial-gradient(circle at 50% 50%, #000 62%, transparent 78%);
-  filter:drop-shadow(0 12px 24px rgba(0,0,0,.45));
+  width:92px;height:92px;object-fit:cover;object-position:center;
+  display:block;border:none;background:transparent;border-radius:50%;
 }
 .mark.round{width:110px;height:110px}
-.mark.wide{width:160px;height:160px}
-.partners{display:flex;gap:28px;align-items:center;flex-wrap:wrap;margin-top:28px}
-.partner{display:flex;flex-direction:column;gap:8px;max-width:220px;text-decoration:none}
-.partner small{color:#8C8C8C;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.mark.hermes{width:168px;height:168px;object-position:center 12%}
+.mark.nebank{width:168px;height:168px;object-position:center 30%}
+.partners{display:flex;gap:36px;align-items:flex-start;flex-wrap:wrap;margin-top:28px}
+.partner{display:flex;flex-direction:column;gap:10px;max-width:180px;text-decoration:none}
+.partner small{color:#8C8C8C;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
   
   /* ================= FOOTER ================= */
   footer{ border-top:2px solid var(--line); padding:36px 0; }
@@ -512,17 +511,15 @@
   </div>
   <div class="partners">
   <a class="partner magnetic" href="https://t.me/thehermesex" target="_blank" rel="noopener">
-    <img class="mark wide" src="hermes.jpg" alt="Hermes">
+    <img class="mark hermes" src="hermes.jpg" alt="Hermes">
     <small>Hermes · в личке: от YuRich</small>
   </a>
   <a class="partner magnetic" href="https://t.me/NeBankRobot?start=YURICH" target="_blank" rel="noopener">
-    <img class="mark wide" src="nebank.jpg" alt="Небанк">
+    <img class="mark nebank" src="nebank.jpg" alt="Небанк">
     <small>Небанк · оплаты, не банк</small>
   </a>
 </div>
 <div class="cta-row" style="margin-top:16px">
-  <a href="https://t.me/thehermesex" target="_blank" rel="noopener" class="btn magnetic">Hermes</a>
-  <a href="https://t.me/NeBankRobot?start=YURICH" target="_blank" rel="noopener" class="btn ghost magnetic">НЕБАНК</a>
 </div>
 </section>
 
