@@ -3,36 +3,78 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>YurichHub</title>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;700&display=swap" rel="stylesheet">
+<title>YurichHub — карта экосистемы</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
-body{margin:0;background:#0A0A0A;color:#F3F1EA;font-family:Archivo,sans-serif}
-.wrap{max-width:720px;margin:0 auto;padding:40px 20px}
-h1{font-family:Anton,sans-serif;font-size:48px;line-height:1;text-transform:uppercase}
-a{display:inline-block;margin:8px 8px 0 0;padding:12px 14px;background:#D7FF3D;color:#111;font-weight:700;text-decoration:none}
-p{color:#c7c3b8;line-height:1.5}
-.note{font-size:13px;color:#8C8C8C;margin-top:40px}
+:root{--bg:#0A0A0A;--card:#111;--ink:#F3F1EA;--dim:#8C8C8C;--lime:#D7FF3D;--pink:#E8377E;--gold:#C8A24A;--line:rgba(243,241,234,.12)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Archivo,sans-serif}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+header{position:sticky;top:0;z-index:20;background:rgba(10,10,10,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;gap:16px;align-items:center;justify-content:space-between;min-height:64px;flex-wrap:wrap}
+.brand{font-family:Anton,sans-serif;letter-spacing:.04em;font-size:22px}
+.brand span{color:var(--lime)}
+.nav-links{display:flex;gap:14px;flex-wrap:wrap}
+.nav-links a{font-size:12px;color:var(--dim);text-transform:uppercase;letter-spacing:.08em}
+.nav-links a:hover{color:var(--lime)}
+.hero{padding:72px 0 36px}
+.kicker{color:var(--lime);text-transform:uppercase;letter-spacing:.16em;font-size:12px;margin:0 0 14px}
+h1{font-family:Anton,sans-serif;font-size:clamp(40px,8vw,84px);line-height:.92;margin:0 0 18px;text-transform:uppercase}
+.lead{max-width:640px;color:#cfcbc0;font-size:18px;line-height:1.5}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-block;padding:12px 16px;background:var(--lime);color:#111;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:40px 0}
+.step{border:1px solid var(--line);padding:16px;min-height:140px;background:var(--card)}
+.step b{display:block;color:var(--gold);font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:8px 0 56px}
+.card{border:1px solid var(--line);background:var(--card);padding:22px}
+.card h2{font-family:Anton,sans-serif;text-transform:uppercase;margin:8px 0 10px;font-size:28px}
+.st{display:inline-block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#111;background:var(--pink);padding:4px 8px}
+.st.wait{background:var(--gold)}
+.st.partner{background:#2E3D52;color:var(--ink)}
+.st.edu{background:var(--lime)}
+.card p{color:#c7c3b8;line-height:1.55}
+.links{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.note{color:var(--dim);font-size:13px;line-height:1.5;border-top:1px solid var(--line);padding:28px 0 48px}
+@media(max-width:800px){.flow,.grid{grid-template-columns:1fr}h1{font-size:42px}}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <h1>YurichHub</h1>
-  <p>Городской AI → City Code → расчёты партнёров → курс и ЦФА.</p>
-
-  <p><b>Город</b></p>
-  <a href="https://t.me/SevastopolAIBot" target="_blank">Бот Sevastopol AI</a>
-  <a href="https://t.me/Sevastopol_AI" target="_blank">Канал города</a>
-  <a href="https://t.me/YuRich_Hub" target="_blank">Канал хаба</a>
-
-  <p><b>Курс и ЦФА</b></p>
-  <a href="https://t.me/YuRichRWA" target="_blank">Курс / глоссарий</a>
-  <a href="https://t.me/PavelYuRichRWA" target="_blank">Написать YuRich</a>
-
-  <p><b>Партнёры</b></p>
-  <a href="https://t.me/thehermesex" target="_blank">Hermes (писать: от YuRich)</a>
-  <a href="https://t.me/NeBankRobot?start=YURICH" target="_blank">НЕБАНК</a>
-
-  <p class="note">YuRich не банк, не биржа и не оператор ЦФА. Hermes и НЕБАНК — отдельные сервисы. В Hermes в личке напиши «от YuRich».</p>
-</div>
-</body>
-</html>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html">Yurich<span>Hub</span></a>
+    <div class="nav-links">
+      <a href="https://t.me/SevastopolAIBot" target="_blank" rel="noopener">AI</a>
+      <a href="https://t.me/YuRich_Hub" target="_blank" rel="noopener">Хаби</a>
+      <a href="yurichrwa-pink-glitch.html">Курс</a>
+      <a href="yurichrwa-glossary-full.html">Глоссарий</a>
+      <a href="ofer.html">ЦФА</a>
+    </div>
+  </div>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <p class="kicker">Sevastopol AI × City Code × RWA / ЦФА</p>
+    <h1>Город.<br>Доступ.<br>Инфраструктура.</h1>
+    <p class="lead">YurichHub — карта связки. Сначала помощник по городу собирает людей. Затем City Code включает привилегии и перераспределение спроса. Дальше финансовый контур партнёров и выходы в курс, глоссарий и сборку ЦФА.</p>
+    <div class="row">
+      <a class="btn" href="https://t.me/SevastopolAIBot" target="_blank" rel="noopener">Открыть Sevastopol AI</a>
+      <a class="btn ghost" href="yurichrwa-pink-glitch.html">Курс RWA / ЦФА</a>
+      <a class="btn ghost" href="ofer.html">Сборка выпуска</a>
+    </div>
+  </section>
+  <section class="flow">
+    <div class="step"><b>01 вход</b>Sevastopol AI знает город, помогает и вовлекает дополнять базу.</div>
+    <div class="step"><b>02 контур</b>City Code — привилегии и перераспределение спроса внутри города.</div>
+    <div class="step"><b>03 рельсы</b>Hermes и НЕБАНК — партнёрская финансовая инфраструктура.</div>
+    <div class="step"><b>04 выход</b>Курс, глоссарий, книга, ЦФА для партнёров City Code.</div>
+  </section>
+  <div class="grid">
+    <article class="card">
+      <span class="st">живой / не публичный</span>
+      <h2>Sevastopol AI</h2>
+     
