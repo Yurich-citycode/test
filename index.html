@@ -47,19 +47,60 @@
   @media (max-width:860px){ .wrap{ padding:0 22px; } }
   a{ color:inherit; }
   ::selection{ background:var(--lime); color:#0A0A0A; }
-  #sevastopol{
-  background-image:url("sevastopol-ai.jpg");
-  background-repeat:no-repeat;
-  background-position:right 8% center;
-  background-size:280px;
-  background-blend-mode:luminosity;
+  section.chapter,
+.hero {
+  background-color: #0A0A0A;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  isolation: isolate;
 }
-#sevastopol{background-color:#0A0A0A}
-#citycode{
-  background-image:url("city-code.jpg");
-  background-repeat:no-repeat;
-  background-position:right 6% top 12%;
-  background-size:220px;
+
+.hero {
+  background-image:
+    linear-gradient(100deg, rgba(10,10,10,.92) 0%, rgba(10,10,10,.62) 46%, rgba(10,10,10,.28) 100%),
+    url("sevastopol-ai.jpg");
+}
+
+#sevastopol {
+  background-image:
+    linear-gradient(90deg, rgba(10,10,10,.90) 0%, rgba(10,10,10,.70) 48%, rgba(10,10,10,.38) 100%),
+    url("sevastopol-ai.jpg");
+}
+
+#citycode {
+  background-image:
+    linear-gradient(100deg, rgba(10,10,10,.92) 0%, rgba(10,10,10,.74) 50%, rgba(10,10,10,.40) 100%),
+    url("city-code.jpg");
+}
+
+#rwa {
+  background-image:
+    linear-gradient(180deg, rgba(10,10,10,.90) 0%, rgba(10,10,10,.68) 100%),
+    url("hermes.jpg");
+}
+
+#course {
+  background-image:
+    linear-gradient(90deg, rgba(10,10,10,.92), rgba(10,10,10,.55)),
+    url("ai-screen.jpg");
+}
+
+#cfa {
+  background-image:
+    linear-gradient(90deg, rgba(10,10,10,.92), rgba(10,10,10,.55)),
+    url("nebank.jpg");
+}
+
+@media (max-width: 760px) {
+  .hero,
+  #sevastopol,
+  #citycode,
+  #rwa,
+  #course,
+  #cfa {
+    background-position: center top;
+  }
 }
 
   /* ================= NAV ================= */
