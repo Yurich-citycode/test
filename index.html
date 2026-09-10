@@ -34,6 +34,15 @@
   }
   *{box-sizing:border-box;}
   html{ scroll-behavior:auto; }
+  /* Плавное исчезновение страницы при переходе */
+body {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+body.fade-out {
+  opacity: 0;
+}
   body{
     margin:0; background:var(--bg); color:var(--ink);
     font-family:var(--font-sans); -webkit-font-smoothing:antialiased;
@@ -489,7 +498,7 @@
   <div class="hero-bg" id="heroBg" style="background:radial-gradient(120% 140% at 15% 10%, #12100f 0%, #0A0A0A 55%);"></div>
   <div class="hero-portrait">
     <img class="p-base" src="yurichhub.jpg" alt="YurichHub Portrait">
-    <img class="p-glasses" id="pGlasses" src="yurichhub.png" alt="Glasses Overlay">
+    <img class="p-glasses" id="pGlasses" src="yurichhub.png" 
   </div>
   <div class="hero-scrim"></div>
   <div class="spotlight" id="spotlight"></div>
@@ -911,6 +920,36 @@
     stage.addEventListener('mouseleave', function(){ photo.style.transform = ''; });
   }
 })();
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Находим все ссылки на сайте
+    const links = document.querySelectorAll("a");
+
+    links.forEach(link => {
+      // Проверяем, что ссылка ведет на внутреннюю страницу (например, course.html, cfa.html)
+      const href = link.getAttribute("href");
+      if (
+        link.hostname === window.location.hostname && 
+        href && 
+        !href.startsWith("#") && 
+        !href.startsWith("http") &&
+        link.getAttribute("target") !== "_blank"
+      ) {
+        link.addEventListener("click", e => {
+          e.preventDefault(); // Останавливаем моментальный переход
+          const targetUrl = link.href;
+
+          // Плавно гасим экран
+          document.body.classList.add("fade-out");
+
+          // Ждем 0.3 секунды (время анимации) и перенаправляем на новую страницу
+          setTimeout(() => {
+            window.location.href = targetUrl;
+          }, 300);
+        });
+      }
+    });
+  });
 </script>
 
 </body>
