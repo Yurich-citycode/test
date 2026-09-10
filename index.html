@@ -911,27 +911,6 @@ div[class*="manifest"] p:hover {
     stage.addEventListener('mouseleave', function(){ photo.style.transform = ''; });
   }
 })();
-<script>
-  document.addEventListener("click", (e) => {
-    const link = e.target.closest("a");
-    if (!link) return;
-
-    const href = link.getAttribute("href");
-    if (
-      link.hostname === window.location.hostname &&
-      href &&
-      !href.startsWith("#") &&
-      !href.startsWith("http") &&
-      link.getAttribute("target") !== "_blank"
-    ) {
-      if (document.startViewTransition) {
-        e.preventDefault();
-        document.startViewTransition(() => {
-          window.location.href = href;
-        });
-      }
-    }
-  });
 </script>
 
 </body>
