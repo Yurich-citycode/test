@@ -586,12 +586,23 @@ div[class*="manifest"] p:hover {
           <img class="kc-photo" src="keychain.png" alt="City Code">
         </div>
         <div class="kc-hotspots">
-          <button class="kc-hot" data-key="code" style="left: 15%; top: 43%; width: 24%; height: 42%; --hc: #d7ff3d;"></button>
-          <button class="kc-hot" data-key="privileges" style="left: 26%; top: 50%; width: 19%; height: 45%; --hc: #1f3b5c;"></button>
-          <button class="kc-hot" data-key="partner" style="left: 41%; top: 48%; width: 11%; height: 50%; --hc: #c3f000;"></button>
-          <button class="kc-hot" data-key="events" style="left: 50%; top: 50%; width: 14%; height: 35%; --hc: #333333;"></button>
-          <button class="kc-hot" data-key="insights" style="left: 56%; top: 43%; width: 23%; height: 48%; --hc: #0070f3;"></button>
-          <button class="kc-hot" data-key="member" style="left: 65%; top: 45%; width: 19%; height: 28%; border-radius: 50%; --hc: #d9480f;"></button>
+          <!-- 01 CODE (зеленый пятиугольник) -->
+          <button class="kc-hot" data-key="code" style="left:14.5%; top:43.5%; width:18%; height:37%; transform:rotate(-12deg); clip-path: polygon(30% 0%, 100% 20%, 75% 100%, 0% 80%); z-index:3; --hc:#d7ff3d;"></button>
+          
+          <!-- 02 PRIVILEGES (темный закругленный) -->
+          <button class="kc-hot" data-key="privileges" style="left:20%; top:50.5%; width:11.5%; height:39%; transform:rotate(-18deg); border-radius:30px; z-index:4; --hc:#223c68;"></button>
+          
+          <!-- 03 PARTNER (желтый узкий) -->
+          <button class="kc-hot" data-key="partner" style="left:27.2%; top:49%; width:8%; height:43%; transform:rotate(-5deg); z-index:5; --hc:#d7ff3d;"></button>
+          
+          <!-- 04 EVENTS (черный маленький) -->
+          <button class="kc-hot" data-key="events" style="left:32%; top:43%; width:8.5%; height:25%; transform:rotate(8deg); z-index:2; --hc:#444444;"></button>
+          
+          <!-- 05 INSIGHTS (синий прямоугольный) -->
+          <button class="kc-hot" data-key="insights" style="left:35.8%; top:49.5%; width:12.5%; height:37%; transform:rotate(28deg); z-index:6; --hc:#1b66d7;"></button>
+          
+          <!-- 06 MEMBER (оранжевый круг сверху) -->
+          <button class="kc-hot" data-key="member" style="left:39.5%; top:38.5%; width:11.5%; height:22%; border-radius:50%; z-index:5; --hc:#e05226;"></button>
         </div>
       </div>
       <div class="kc-hint">Нажми на ключ →</div>
