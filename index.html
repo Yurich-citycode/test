@@ -7,6 +7,22 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+/* Фикс отображения и прозрачности брелка */
+.keychain-stage, 
+.kc-photo-wrap, 
+.kc-tilt {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.kc-photo {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 500px !important;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
 <style>
   :root{
     --bg:#0A0A0A;
@@ -567,7 +583,7 @@ div[class*="manifest"] p:hover {
     <div class="keychain-stage">
       <div class="kc-photo-wrap">
         <div class="kc-tilt">
-          <img class="kc-photo" src="keychain.png" alt="City Code">
+          <img class="kc-photo" src="/keychain.png?v=2" alt="City Code">
         </div>
         <div class="kc-hotspots">
           <button class="kc-hot" data-key="code" style="left:21.9%; top:43.4%; width:17.2%; height:37.5%; --hc:var(--lime);"></button>
