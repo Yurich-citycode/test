@@ -62,19 +62,17 @@
 }
 
 #sevastopol {
-  background-color: #0A0A0A;
-  background-image: url("sevastopol-ai.jpg");
-  background-repeat: no-repeat;
-  background-position: right center;
-  background-size: 58% auto;   /* не cover — тогда лого не размажется */
+  /* Убираем фоновую картинку, если она мылится */
+  background-image: none !important;
+  /* Делаем стильный глубокий фон с мягким свечением */
+  background: radial-gradient(circle at 85% 40%, rgba(0, 180, 255, 0.08) 0%, rgba(10, 10, 10, 0.98) 70%) !important;
 }
 
 #citycode {
-  background-color: #0A0A0A;
-  background-image: url("city-code.jpg");
-  background-repeat: no-repeat;
-  background-position: right 8% center;
-  background-size: 52% auto;
+  /* Убираем растянутую мутную картинку */
+  background-image: none !important;
+  /* Ставим глубокий тёмный градиент с аккуратной зеленоватой/лаймовой подстветкой */
+  background: radial-gradient(circle at 80% 50%, rgba(215, 255, 61, 0.08) 0%, rgba(10, 10, 10, 0.98) 70%) !important;
 }
 
 #rwa,
