@@ -34,14 +34,14 @@
   }
   *{box-sizing:border-box;}
   html{ scroll-behavior:auto; }
-  /* Плавное исчезновение страницы при переходе */
+  /* Плавный переход страниц */
 body {
   opacity: 1;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
 }
-
 body.fade-out {
   opacity: 0;
+  pointer-events: none;
 }
   body{
     margin:0; background:var(--bg); color:var(--ink);
@@ -922,11 +922,9 @@ body.fade-out {
 })();
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    // Находим все ссылки на сайте
     const links = document.querySelectorAll("a");
 
     links.forEach(link => {
-      // Проверяем, что ссылка ведет на внутреннюю страницу (например, course.html, cfa.html)
       const href = link.getAttribute("href");
       if (
         link.hostname === window.location.hostname && 
@@ -936,16 +934,14 @@ body.fade-out {
         link.getAttribute("target") !== "_blank"
       ) {
         link.addEventListener("click", e => {
-          e.preventDefault(); // Останавливаем моментальный переход
+          e.preventDefault();
           const targetUrl = link.href;
 
-          // Плавно гасим экран
           document.body.classList.add("fade-out");
 
-          // Ждем 0.3 секунды (время анимации) и перенаправляем на новую страницу
           setTimeout(() => {
             window.location.href = targetUrl;
-          }, 300);
+          }, 250);
         });
       }
     });
