@@ -912,15 +912,15 @@ div[class*="manifest"] p:hover {
   }
 })();
 <script>
-  document.addEventListener("click", e => {
+  document.addEventListener("click", (e) => {
     const link = e.target.closest("a");
     if (!link) return;
-    
+
     const href = link.getAttribute("href");
     if (
-      link.hostname === window.location.hostname && 
-      href && 
-      !href.startsWith("#") && 
+      link.hostname === window.location.hostname &&
+      href &&
+      !href.startsWith("#") &&
       !href.startsWith("http") &&
       link.getAttribute("target") !== "_blank"
     ) {
