@@ -408,15 +408,21 @@ div[class*="manifest"] p:hover {
   }
 
   /* ---- spark burst on hover ---- */
- .kc-spark{
-   position:fixed; z-index:9999; width:6px; height:6px; border-radius:50%;
-   pointer-events:none; will-change:transform,opacity;
-   background:radial-gradient(circle, #fff 0%, var(--sc,var(--lime)) 45%, transparent 75%);
-   animation:sparkFly .65s cubic-bezier(.2,.8,.2,1) forwards;
- }
+  .kc-spark{
+    position: absolute; 
+    z-index: 100; 
+    width: 6px; 
+    height: 6px; 
+    border-radius: 50%;
+    pointer-events: none; 
+    will-change: transform, opacity;
+    background: radial-gradient(circle, #ffffff 0%, var(--sc, #d7ff3d) 60%, transparent 100%);
+    box-shadow: 0 0 8px var(--sc, #d7ff3d);
+    animation: sparkFly .65s cubic-bezier(.2,.8,.2,1) forwards;
+  }
   @keyframes sparkFly{
-    0%{ transform:translate(-50%,-50%) scale(1); opacity:1; }
-    100%{ transform:translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(0); opacity:0; }
+    0%{ transform: translate(0, 0) scale(1); opacity: 1; }
+    100%{ transform: translate(var(--dx), var(--dy)) scale(0); opacity: 0; }
   }
   .kc-hint{
     text-align:center; font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
@@ -816,56 +822,58 @@ div[class*="manifest"] p:hover {
   var kcTitle = document.getElementById('kcTitle');
   var kcDesc = document.getElementById('kcDesc');
   var kcPanel = document.getElementById('kcPanel');
+  var photoWrap = document.querySelector('.kc-photo-wrap');
 
-  function activateKey(key){
+  function spawnSparks(e, color, count){
+    if(!photoWrap) return;
+    var rect = photoWrap.getBoundingClientRect();
+    var lx = e.clientX - rect.left;
+    var ly = e.clientY - rect.top;
+
+    for(var i=0; i<count; i++){
+      var s = document.createElement('span');
+      s.className = 'kc-spark';
+      var angle = Math.random() * Math.PI * 2;
+      var dist = 25 + Math.random() * 45;
+      s.style.left = lx + 'px';
+      s.style.top = ly + 'px';
+      s.style.setProperty('--dx', Math.cos(angle) * dist + 'px');
+      s.style.setProperty('--dy', Math.sin(angle) * dist + 'px');
+      s.style.setProperty('--sc', color);
+      photoWrap.appendChild(s);
+      (function(el){ setTimeout(function(){ el.remove(); }, 650); })(s);
+    }
+  }
+
+  function activateKey(key, e){
     var d = kcData[key];
     if(!d) return;
-    kcNum.textContent = d.n;
-    kcTitle.textContent = d.title;
-    kcDesc.textContent = d.desc;
-    kcPanel.style.animation = 'none';
-    void kcPanel.offsetWidth;
-    kcPanel.style.animation = 'panelPulse .4s ease';
+    if(kcNum) kcNum.textContent = d.n;
+    if(kcTitle) kcTitle.textContent = d.title;
+    if(kcDesc) kcDesc.textContent = d.desc;
+    if(kcPanel){
+      kcPanel.style.animation = 'none';
+      void kcPanel.offsetWidth;
+      kcPanel.style.animation = 'panelPulse .4s ease';
+    }
+
     document.querySelectorAll('.kc-hot, .cc-chip').forEach(function(el){
       el.classList.toggle('active', el.getAttribute('data-key') === key);
     });
-  }
-  document.querySelectorAll('.kc-hot, .cc-chip').forEach(function(el){
-    el.addEventListener('click', function(){ activateKey(el.getAttribute('data-key')); });
-  });
-  document.querySelectorAll('[data-key="code"]').forEach(function(el){ el.classList.add('active'); });
 
-  /* ---------- spark burst on hover ---------- */
-  var kcHotspots = document.querySelector('.kc-hotspots');
-  if(kcHotspots){
-    var lastSpark = 0;
-    function spawnSparks(x, y, color, count){
-      var rect = kcHotspots.getBoundingClientRect();
-      var lx = x - rect.left, ly = y - rect.top;
-      for(var i=0; i<count; i++){
-        var s = document.createElement('span');
-        s.className = 'kc-spark';
-        var angle = Math.random() * Math.PI * 2;
-        var dist = 18 + Math.random() * 34;
-        s.style.left = lx + 'px';
-        s.style.top = ly + 'px';
-        s.style.setProperty('--dx', Math.cos(angle)*dist + 'px');
-        s.style.setProperty('--dy', Math.sin(angle)*dist + 'px');
-        s.style.setProperty('--sc', color);
-        kcHotspots.appendChild(s);
-        (function(el){ setTimeout(function(){ el.remove(); }, 680); })(s);
-      }
+    var activeBtn = document.querySelector('.kc-hot[data-key="' + key + '"]');
+    if(activeBtn && photoWrap){
+      var color = getComputedStyle(activeBtn).getPropertyValue('--hc').trim() || '#D7FF3D';
+      photoWrap.style.setProperty('--active-color', color);
+      photoWrap.classList.add('is-active');
+      if(e) spawnSparks(e, color, 12);
     }
-    document.querySelectorAll('.kc-hot').forEach(function(hot){
-      var color = getComputedStyle(hot).getPropertyValue('--hc') || '#D7FF3D';
-      hot.addEventListener('mouseenter', function(e){ spawnSparks(e.clientX, e.clientY, color, 7); });
-      hot.addEventListener('mousemove', function(e){
-        var now = Date.now();
-        if(now - lastSpark > 90){ lastSpark = now; spawnSparks(e.clientX, e.clientY, color, 2); }
-      });
-      hot.addEventListener('click', function(e){ spawnSparks(e.clientX, e.clientY, color, 14); });
-    });
   }
+
+  document.querySelectorAll('.kc-hot, .cc-chip').forEach(function(el){
+    el.addEventListener('click', function(e){ activateKey(el.getAttribute('data-key'), e); });
+  });
+  activateKey('code');
 
   var wipeIo = new IntersectionObserver(function(entries){
     entries.forEach(function(en){
