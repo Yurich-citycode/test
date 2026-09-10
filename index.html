@@ -91,6 +91,55 @@
     background-position: center top;
   }
 }
+/* --- НАШИ ПРАВКИ --- */
+
+/* 1. Убираем белый/серый прямоугольник вокруг брелка */
+.keychain-stage,
+div[class*="keychain"] {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.keychain-stage::before,
+.keychain-stage::after {
+  display: none !important;
+}
+
+/* 2. Сдвигаем иконки (Гермес и Небанк) вправо */
+.footer-left,
+.bottom-nav,
+#hermes, 
+#nebank {
+  margin-left: 60px !important;
+}
+
+/* 3. Скругляем и мягко вписываем скриншот Sevastopol AI */
+.roadmap-img,
+#sevastopol img,
+.sevastopol-container img {
+  border-radius: 20px !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 30px rgba(215, 255, 61, 0.15) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 5 и 6. Делаем стильный манифест внизу (эффект лесенки и подсветки) */
+.manifest-section p,
+div[class*="manifest"] p,
+div[class*="quote"] p {
+  transition: all 0.3s ease;
+}
+
+.manifest-section p:nth-child(even),
+div[class*="manifest"] p:nth-child(even) {
+  opacity: 0.35;
+  transform: translateX(20px);
+}
+
+.manifest-section p:hover,
+div[class*="manifest"] p:hover {
+  opacity: 1 !important;
+  color: #d7ff3d !important;
+  transform: scale(1.03) translateX(10px);
+}
 
   /* ================= NAV ================= */
   header{ position:relative; z-index:5; padding:28px 0 0; }
@@ -475,6 +524,10 @@
 
 <div class="marquee"><div class="marquee-track" id="marquee1">
   <div class="item">
+    <span class="m-lime">SEVASTOPOL AI</span><span class="sep">✦</span>
+    <span class="m-pink">CITY CODE</span><span class="sep">✦</span>
+    <span class="m-lime">CRIMEA RWA</span><span class="sep">✦</span>
+    <span class="m-pink">YURICH RWA COURSE</span><span class="sep">✦</span>
     <span class="m-lime">SEVASTOPOL AI</span><span class="sep">✦</span>
     <span class="m-pink">CITY CODE</span><span class="sep">✦</span>
     <span class="m-lime">CRIMEA RWA</span><span class="sep">✦</span>
