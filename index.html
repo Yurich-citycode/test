@@ -4,6 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>YurichHub — Sevastopol AI × City Code × Crimea RWA</title>
+<meta name="description" content="Экосистема Юрича: Sevastopol AI, City Code, Crimea RWA, курсы и инфраструктура владения.">
+<!-- OpenGraph для красивых превью в соцсетях и мессенджерах -->
+<meta property="og:title" content="YurichHub — Sevastopol AI × City Code × Crimea RWA">
+<meta property="og:description" content="Экосистема Юрича: Sevastopol AI, City Code, Crimea RWA, курсы и инфраструктура владения.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="yurichhub.jpg">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
@@ -47,101 +54,94 @@
   @media (max-width:860px){ .wrap{ padding:0 22px; } }
   a{ color:inherit; }
   ::selection{ background:var(--lime); color:#0A0A0A; }
+  
   section.chapter,
-.hero {
-  background-color: #0A0A0A;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  isolation: isolate;
-}
+  .hero {
+    background-color: #0A0A0A;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    isolation: isolate;
+  }
 
-.hero {
-  background-image: none;
-  background-color: #0A0A0A;
-}
+  .hero {
+    background-image: none;
+    background-color: #0A0A0A;
+  }
 
-#sevastopol {
-  /* Убираем фоновую картинку, если она мылится */
-  background-image: none !important;
-  /* Делаем стильный глубокий фон с мягким свечением */
-  background: radial-gradient(circle at 85% 40%, rgba(0, 180, 255, 0.08) 0%, rgba(10, 10, 10, 0.98) 70%) !important;
-}
+  section.chapter#sevastopol {
+    background-image: none;
+    background: radial-gradient(circle at 85% 40%, rgba(0, 180, 255, 0.08) 0%, rgba(10, 10, 10, 0.98) 70%);
+  }
 
-#citycode {
-  /* Убираем растянутую мутную картинку */
-  background-image: none !important;
-  /* Ставим глубокий тёмный градиент с аккуратной зеленоватой/лаймовой подстветкой */
-  background: radial-gradient(circle at 80% 50%, rgba(215, 255, 61, 0.08) 0%, rgba(10, 10, 10, 0.98) 70%) !important;
-}
+  section.chapter#citycode {
+    background-image: none;
+    background: radial-gradient(circle at 80% 50%, rgba(215, 255, 61, 0.08) 0%, rgba(10, 10, 10, 0.98) 70%);
+  }
 
-#rwa,
-#course,
-#cfa {
-  background-image: none;
-}
-
-@media (max-width: 760px) {
-  .hero,
-  #sevastopol,
-  #citycode,
   #rwa,
   #course,
   #cfa {
-    background-position: center top;
+    background-image: none;
   }
-}
-/* --- НАШИ ПРАВКИ --- */
 
-/* 1. Убираем белый/серый прямоугольник вокруг брелка */
-.keychain-stage,
-div[class*="keychain"] {
-  background: transparent !important;
-  box-shadow: none !important;
-}
-.keychain-stage::before,
-.keychain-stage::after {
-  display: none !important;
-}
+  @media (max-width: 760px) {
+    .hero,
+    #sevastopol,
+    #citycode,
+    #rwa,
+    #course,
+    #cfa {
+      background-position: center top;
+    }
+  }
 
-/* 2. Сдвигаем иконки (Гермес и Небанк) вправо */
-.footer-left,
-.bottom-nav,
-#hermes, 
-#nebank {
-  margin-left: 60px !important;
-}
+  /* КАСТОМНЫЕ ПРАВКИ */
+  .keychain-stage,
+  div[class*="keychain"] {
+    background: transparent;
+    box-shadow: none;
+  }
+  .keychain-stage::before,
+  .keychain-stage::after {
+    display: none;
+  }
 
-/* 3. Скругляем и мягко вписываем скриншот Sevastopol AI */
-.roadmap-img,
-#sevastopol img,
-.sevastopol-container img {
-  border-radius: 20px !important;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 30px rgba(215, 255, 61, 0.15) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-}
+  .footer-left,
+  .bottom-nav,
+  #hermes, 
+  #nebank {
+    margin-left: 60px;
+  }
 
-/* 5 и 6. Делаем стильный манифест внизу (эффект лесенки и подсветки) */
-.manifest-section p,
-div[class*="manifest"] p,
-div[class*="quote"] p {
-  transition: all 0.3s ease;
-}
+  .roadmap-img,
+  #sevastopol img,
+  .sevastopol-container img {
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 30px rgba(215, 255, 61, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
 
-.manifest-section p:nth-child(even),
-div[class*="manifest"] p:nth-child(even) {
-  opacity: 0.35;
-  transform: translateX(20px);
-}
+  .manifest-section p,
+  div[class*="manifest"] p,
+  div[class*="quote"] p {
+    transition: all 0.3s ease;
+  }
 
-.manifest-section p:hover,
-div[class*="manifest"] p:hover {
-  opacity: 1 !important;
-  color: #d7ff3d !important;
-  transform: scale(1.03) translateX(10px);
-}
+  .manifest-section p:nth-child(even),
+  div[class*="manifest"] p:nth-child(even) {
+    opacity: 0.35;
+    transform: translateX(20px);
+  }
 
-  /* ================= NAV ================= */
+  .manifest-section p:hover,
+  div[class*="manifest"] p:hover {
+    opacity: 1;
+    color: #d7ff3d;
+    transform: scale(1.03) translateX(10px);
+  }
+
+  /* NAV */
   header{ position:relative; z-index:5; padding:28px 0 0; }
   .nav{ display:flex; align-items:center; justify-content:space-between; }
   .brand{ font-family:var(--font-display); font-size:19px; letter-spacing:.01em; text-transform:uppercase; }
@@ -150,12 +150,16 @@ div[class*="manifest"] p:hover {
   .navlinks a{ text-decoration:none; color:var(--ink); opacity:.7; padding-bottom:3px; border-bottom:1px solid transparent; transition:opacity .2s, border-color .2s, color .2s; }
   .navlinks a:hover{ opacity:1; border-color:var(--lime); color:var(--lime); }
   @media (max-width:760px){
-  .nav{flex-wrap:wrap;gap:12px}
-  .navlinks{display:flex;flex-wrap:wrap;gap:12px 16px;width:100%}
-}
+    .nav{flex-wrap:wrap;gap:12px}
+    .navlinks{display:flex;flex-wrap:wrap;gap:12px 16px;width:100%}
+  }
 
-  /* ================= HERO ================= */
-  .hero{ position:relative; min-height:100svh; display:flex; align-items:center; overflow:hidden; } @media (max-width:900px){   .hero{min-height:auto;padding:20px 0 40px}   .hero-portrait{position:relative;top:auto;right:auto;transform:none;width:min(92vw,420px);margin:24px auto 0;opacity:.9} }
+  /* HERO */
+  .hero{ position:relative; min-height:100svh; display:flex; align-items:center; overflow:hidden; } 
+  @media (max-width:900px){ 
+    .hero{min-height:auto;padding:20px 0 40px} 
+    .hero-portrait{position:relative;top:auto;right:auto;transform:none;width:min(92vw,420px);margin:24px auto 0;opacity:.9} 
+  }
   .hero-bg{ position:absolute; top:-8%; left:0; right:0; height:118%; z-index:0; will-change:transform; }
   .hero-portrait{
     position:absolute; right:0; top:50%; transform:translateY(-50%);
@@ -229,7 +233,6 @@ div[class*="manifest"] p:hover {
   @keyframes spin{ to{ transform:rotate(360deg); } }
   @media (max-width:760px){ .stamp{ display:none; } }
 
-  /* ---- custom magnetic cursor ---- */
   @media (pointer:fine){
     body{ cursor:none; }
     a, button{ cursor:none; }
@@ -248,7 +251,6 @@ div[class*="manifest"] p:hover {
   .cur-ring.hover-pink{ width:64px; height:64px; background:rgba(232,55,126,.1); border-color:var(--pink); }
   @media (pointer:coarse){ .cur-dot, .cur-ring{ display:none; } }
 
-  /* ---- scroll reveal ---- */
   .reveal{ opacity:0; transform:translateY(26px); transition:opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1); }
   .reveal.in-view{ opacity:1; transform:translateY(0); }
   .reveal-2{ transition-delay:.12s; }
@@ -258,7 +260,6 @@ div[class*="manifest"] p:hover {
   .rword-inner{ display:inline-block; transform:translateY(115%); transition:transform .7s cubic-bezier(.2,.8,.2,1); }
   .split.revealed .rword-inner{ transform:translateY(0); }
 
-  /* ---- section wipe curtain ---- */
   .wipe{
     position:absolute; inset:0; z-index:6; transform-origin:left center;
     pointer-events:none; transition:transform 1s cubic-bezier(.65,0,.15,1);
@@ -270,7 +271,6 @@ div[class*="manifest"] p:hover {
     background:radial-gradient(360px circle at var(--mx,50%) var(--my,50%), rgba(215,255,61,.10), transparent 60%);
   }
 
-  /* ---- status widget (inline, part of hero flow) ---- */
   .status-card{
     display:inline-flex; flex-direction:column; gap:8px; margin-top:34px; width:auto; max-width:280px;
     border:1px solid rgba(232,55,126,.5); background:rgba(232,55,126,.05);
@@ -283,7 +283,6 @@ div[class*="manifest"] p:hover {
   .status-card .sc-dot{ width:6px; height:6px; border-radius:50%; background:var(--pink); box-shadow:0 0 8px var(--pink); animation:pulse 1.8s ease-in-out infinite; }
   @keyframes pulse{ 0%,100%{ opacity:1; } 50%{ opacity:.35; } }
 
-  /* ---- marquee ---- */
   .marquee{ overflow:hidden; border-top:2px solid var(--line); border-bottom:2px solid var(--line); padding:18px 0; position:relative; z-index:1; background:var(--bg); }
   .marquee-track{ display:flex; width:max-content; gap:0; animation:marquee 26s linear infinite; }
   .marquee-track .item{ display:flex; align-items:center; gap:44px; font-family:var(--font-display); text-transform:uppercase; font-size:22px; white-space:nowrap; margin-right:44px; }
@@ -292,7 +291,6 @@ div[class*="manifest"] p:hover {
   .marquee-track .item span.sep{ color:var(--ink-dim); font-size:14px; }
   @keyframes marquee{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
 
-  /* ---- giant background numerals ---- */
   .bg-num{
     position:absolute; z-index:0; top:-.15em; right:-.03em; font-family:var(--font-display);
     font-size:clamp(240px,32vw,460px); line-height:1; color:transparent;
@@ -301,7 +299,6 @@ div[class*="manifest"] p:hover {
   section.chapter > .wrap{ position:relative; z-index:1; }
   @media (max-width:760px){ .bg-num{ display:none; } }
 
-  /* ---- giant footer wordmark ---- */
   .wordwall{
     overflow:hidden; border-top:2px solid var(--line); padding:40px 0 10px; position:relative;
   }
@@ -312,7 +309,6 @@ div[class*="manifest"] p:hover {
   }
   @media (max-width:700px){ .wordwall .big{ -webkit-text-stroke:1px rgba(215,255,61,.5); } }
 
-  /* ================= SECTION SHELL ================= */
   section.chapter{ position:relative; padding:120px 0; border-top:2px solid var(--line); }
   .chapter .eyebrow{
     display:inline-flex; align-items:center; gap:10px; font-size:12px; font-weight:700; letter-spacing:.14em;
@@ -330,22 +326,20 @@ div[class*="manifest"] p:hover {
   .grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
   @media (max-width:900px){ .grid-2{ grid-template-columns:1fr; gap:64px; } }
 
-  /* ---- 01 Sevastopol AI graphic ---- */
   .routecard {
-  position: relative;
-  aspect-ratio: auto;
-  max-width: 520px;
-  margin-left: auto;
-  transform: none;
-}
-.routecard img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.routecard svg { display: none; }
+    position: relative;
+    aspect-ratio: auto;
+    max-width: 520px;
+    margin-left: auto;
+    transform: none;
+  }
+  .routecard img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .routecard svg { display: none; }
 
-  /* ================= 02 CITY CODE ================= */
   .cc-section{ background:radial-gradient(ellipse 1000px 560px at 76% 30%, rgba(215,255,61,.09), transparent 62%); }
   .cc-grid{ grid-template-columns:1.45fr 1fr; gap:40px; }
   @media (max-width:900px){ .cc-grid{ grid-template-columns:1fr; } }
@@ -358,23 +352,23 @@ div[class*="manifest"] p:hover {
   }
   @keyframes auraPulse{ 0%,100%{ opacity:.55; transform:scale(1); } 50%{ opacity:1; transform:scale(1.1); } }
   .kc-photo-wrap{
-   position:relative; z-index:1; width:100%; max-width:1100px; transform-origin:50% 8%;
-   animation:idle-sway 7s ease-in-out infinite;
-   --active-color: rgba(215, 255, 61, 0.4);
- }
- @media (max-width:900px){ .kc-photo-wrap{max-width:100%} }
- @keyframes idle-sway{ 0%,100%{ transform:rotate(-1.6deg);} 50%{ transform:rotate(1.6deg);} }
- .kc-photo{
-   display:block; width:100%; height:auto;
-   filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
-   transition: transform .35s ease, filter .35s ease;
- }
- .kc-tint{ display: none !important; }
- .kc-photo-wrap:hover .kc-photo,
- .kc-photo-wrap.is-active .kc-photo{ 
-   transform: scale(1.02);
-   filter: drop-shadow(0 0 30px var(--active-color)) drop-shadow(0 20px 40px rgba(0,0,0,0.6)); 
- }
+    position:relative; z-index:1; width:100%; max-width:1100px; transform-origin:50% 8%;
+    animation:idle-sway 7s ease-in-out infinite;
+    --active-color: rgba(215, 255, 61, 0.4);
+  }
+  @media (max-width:900px){ .kc-photo-wrap{max-width:100%} }
+  @keyframes idle-sway{ 0%,100%{ transform:rotate(-1.6deg);} 50%{ transform:rotate(1.6deg);} }
+  .kc-photo{
+    display:block; width:100%; height:auto;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
+    transition: transform .35s ease, filter .35s ease;
+  }
+  .kc-tint{ display: none !important; }
+  .kc-photo-wrap:hover .kc-photo,
+  .kc-photo-wrap.is-active .kc-photo{ 
+    transform: scale(1.02);
+    filter: drop-shadow(0 0 30px var(--active-color)) drop-shadow(0 20px 40px rgba(0,0,0,0.6)); 
+  }
   .kc-tilt{ transition:transform .35s ease; }
   .cc-list{ display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
   .cc-chip{
@@ -387,13 +381,12 @@ div[class*="manifest"] p:hover {
   .cc-chip:hover{ color:var(--ink); border-color:var(--lime); }
   .cc-chip.active{ color:#0A0A0A; background:var(--lime); border-color:var(--lime); }
 
-  /* ---- keychain hotspots ---- */
   .kc-hot {
     position: absolute;
-    background: transparent !important;
-    border: none !important;
-    outline: none !important;
-    box-shadow: none !important;
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
   }
@@ -401,13 +394,12 @@ div[class*="manifest"] p:hover {
   .kc-hot:focus,
   .kc-hot:active,
   .kc-hot.is-active {
-    outline: none !important;
-    border: none !important;
-    box-shadow: none !important;
-    background: transparent !important;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    background: transparent;
   }
 
-  /* ---- spark burst on hover ---- */
   .kc-spark{
     position: absolute; 
     z-index: 100; 
@@ -429,7 +421,6 @@ div[class*="manifest"] p:hover {
     color:var(--ink-dim); margin-top:14px; opacity:.8;
   }
 
-  /* ---- keychain detail panel ---- */
   .kc-panel{
     display:flex; gap:16px; align-items:flex-start; margin-top:24px; padding:18px 20px;
     border:1px solid var(--line); background:rgba(255,255,255,.02); max-width:440px;
@@ -439,7 +430,6 @@ div[class*="manifest"] p:hover {
   .kc-panel-desc{ font-size:13px; line-height:1.6; color:#C4C4C4; }
   @keyframes panelPulse{ 0%{ border-color:var(--lime); } 100%{ border-color:var(--line); } }
 
-  /* ---- 03 Crimea RWA ---- */
   .rwa-section{ text-align:center; }
   .rwa-section .wrap{ display:flex; flex-direction:column; align-items:center; }
   .network{ width:220px; height:140px; margin:0 auto 40px; opacity:.9; }
@@ -450,7 +440,6 @@ div[class*="manifest"] p:hover {
     transform:rotate(-2deg);
   }
 
-  /* ================= THESIS ================= */
   .thesis{ padding:120px 0; text-align:center; border-top:2px solid var(--line); }
   .thesis p{
     font-family:var(--font-display); text-transform:uppercase; font-size:clamp(24px,3.6vw,40px);
@@ -458,18 +447,17 @@ div[class*="manifest"] p:hover {
   }
   .thesis .signature{ margin-top:26px; font-size:11.5px; font-weight:700; letter-spacing:.1em; color:var(--ink-dim); text-transform:uppercase; }
 
-.mark{
-  width:92px;height:92px;object-fit:cover;object-position:center;
-  display:block;border:none;background:transparent;border-radius:50%;
-}
-.mark.round{width:110px;height:110px}
-.mark.hermes{width:168px;height:168px;object-position:center 12%}
-.mark.nebank{width:168px;height:168px;object-position:center 72%}
-.partners{display:flex;gap:36px;align-items:flex-start;flex-wrap:wrap;margin-top:28px}
-.partner{display:flex;flex-direction:column;gap:10px;max-width:180px;text-decoration:none}
-.partner small{color:#8C8C8C;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+  .mark{
+    width:92px;height:92px;object-fit:cover;object-position:center;
+    display:block;border:none;background:transparent;border-radius:50%;
+  }
+  .mark.round{width:110px;height:110px}
+  .mark.hermes{width:168px;height:168px;object-position:center 12%}
+  .mark.nebank{width:168px;height:168px;object-position:center 72%}
+  .partners{display:flex;gap:36px;align-items:flex-start;flex-wrap:wrap;margin-top:28px}
+  .partner{display:flex;flex-direction:column;gap:10px;max-width:180px;text-decoration:none}
+  .partner small{color:#8C8C8C;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
   
-  /* ================= FOOTER ================= */
   footer{ border-top:2px solid var(--line); padding:36px 0; }
   .foot-row{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
   .foot-meta{ font-size:11px; font-weight:700; letter-spacing:.08em; color:var(--ink-dim); text-transform:uppercase; }
@@ -487,23 +475,22 @@ div[class*="manifest"] p:hover {
   <div class="nav">
     <div class="brand">Yurich<span>Hub</span></div>
     <nav class="navlinks">
-      <nav class="navlinks">
-  <a href="#sevastopol" class="magnetic">Sevastopol AI</a>
-<a href="#citycode" class="magnetic">City Code</a>
-<a href="#rwa" class="magnetic">Crimea RWA</a>
-<a href="course.html" class="magnetic">Курс</a>
-<a href="cfa.html" class="magnetic">ЦФА</a>
-</nav>
+      <a href="#sevastopol" class="magnetic">Sevastopol AI</a>
+      <a href="#citycode" class="magnetic">City Code</a>
+      <a href="#rwa" class="magnetic">Crimea RWA</a>
+      <a href="course.html" class="magnetic">Курс</a>
+      <a href="cfa.html" class="magnetic">ЦФА</a>
+    </nav>
   </div>
 </header>
 
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 <section class="hero">
   <div class="hero-bg" id="heroBg" style="background:radial-gradient(120% 140% at 15% 10%, #12100f 0%, #0A0A0A 55%);"></div>
   <div class="hero-portrait">
-  <img class="p-base" src="yurichhub.jpg">
-  <img class="p-glasses" id="pGlasses" src="yurichhub.png">
-</div>
+    <img class="p-base" src="yurichhub.jpg" alt="YurichHub Portrait">
+    <img class="p-glasses" id="pGlasses" src="yurichhub.png" alt="Glasses Overlay">
+  </div>
   <div class="hero-scrim"></div>
   <div class="spotlight" id="spotlight"></div>
 
@@ -528,36 +515,38 @@ div[class*="manifest"] p:hover {
       <span class="tilt-r"><a href="cfa.html" class="btn ghost magnetic">Сборка выпуска</a></span>
     </div>
     <a href="course.html" class="status-card magnetic" style="text-decoration:none">
-  <div class="sc-label">Параллельно строится</div>
-  <div class="sc-title">YuRich RWA — курс</div>
-  <div class="sc-row"><span class="sc-dot"></span>Книга-курс · Telegram · глоссарий</div>
-</a>
+      <div class="sc-label">Параллельно строится</div>
+      <div class="sc-title">YuRich RWA — курс</div>
+      <div class="sc-row"><span class="sc-dot"></span>Книга-курс · Telegram · глоссарий</div>
+    </a>
   </div>
 
   <div class="corner-coord bl">44.6167° N · 33.5258° E</div>
   <div class="corner-coord br">SEVASTOPOL · BLACK SEA<br>EST. 2026</div>
 </section>
 
-<div class="marquee"><div class="marquee-track" id="marquee1">
-  <div class="item">
-    <span class="m-lime">SEVASTOPOL AI</span><span class="sep">✦</span>
-    <span class="m-pink">CITY CODE</span><span class="sep">✦</span>
-    <span class="m-lime">CRIMEA RWA</span><span class="sep">✦</span>
-    <span class="m-pink">YURICH RWA COURSE</span><span class="sep">✦</span>
-    <span class="m-lime">SEVASTOPOL AI</span><span class="sep">✦</span>
-    <span class="m-pink">CITY CODE</span><span class="sep">✦</span>
-    <span class="m-lime">CRIMEA RWA</span><span class="sep">✦</span>
-    <span class="m-pink">YURICH RWA COURSE</span><span class="sep">✦</span>
+<div class="marquee">
+  <div class="marquee-track" id="marquee1">
+    <div class="item">
+      <span class="m-lime">SEVASTOPOL AI</span><span class="sep">✦</span>
+      <span class="m-pink">CITY CODE</span><span class="sep">✦</span>
+      <span class="m-lime">CRIMEA RWA</span><span class="sep">✦</span>
+      <span class="m-pink">YURICH RWA COURSE</span><span class="sep">✦</span>
+      <span class="m-lime">SEVASTOPOL AI</span><span class="sep">✦</span>
+      <span class="m-pink">CITY CODE</span><span class="sep">✦</span>
+      <span class="m-lime">CRIMEA RWA</span><span class="sep">✦</span>
+      <span class="m-pink">YURICH RWA COURSE</span><span class="sep">✦</span>
+    </div>
+    <div class="item">
+      <span class="m-lime">SEVASTOPOL AI</span><span class="sep">✦</span>
+      <span class="m-pink">CITY CODE</span><span class="sep">✦</span>
+      <span class="m-lime">CRIMEA RWA</span><span class="sep">✦</span>
+      <span class="m-pink">YURICH RWA COURSE</span><span class="sep">✦</span>
+    </div>
   </div>
-  <div class="item">
-    <span class="m-lime">SEVASTOPOL AI</span><span class="sep">✦</span>
-    <span class="m-pink">CITY CODE</span><span class="sep">✦</span>
-    <span class="m-lime">CRIMEA RWA</span><span class="sep">✦</span>
-    <span class="m-pink">YURICH RWA COURSE</span><span class="sep">✦</span>
-  </div>
-</div></div>
+</div>
 
-<!-- ================= 01 SEVASTOPOL AI ================= -->
+<!-- 01 SEVASTOPOL AI -->
 <section class="chapter" id="sevastopol">
   <div class="wipe" style="background:var(--gold)"></div>
   <span class="bg-num">01</span>
@@ -570,12 +559,12 @@ div[class*="manifest"] p:hover {
       <a href="https://t.me/Sevastopol_AI" target="_blank" rel="noopener" class="btn ghost magnetic" style="margin-top:22px;">Открыть Sevastopol AI</a>
     </div>
     <div class="routecard">
-  <img src="ai-screen.jpg" alt="Sevastopol AI">
-</div>
+      <img src="ai-screen.jpg" alt="Sevastopol AI Screen">
+    </div>
   </div>
 </section>
 
-<!-- ================= 02 CITY CODE ================= -->
+<!-- 02 CITY CODE -->
 <section class="chapter cc-section" id="citycode">
   <div class="wipe" style="background:var(--lime)"></div>
   <span class="bg-num" style="color:transparent; -webkit-text-stroke-color:rgba(215,255,61,.10);">02</span>
@@ -583,7 +572,7 @@ div[class*="manifest"] p:hover {
     <div class="keychain-stage">
       <div class="kc-photo-wrap">
         <div class="kc-tilt">
-          <img class="kc-photo" src="keychain.png" alt="City Code">
+          <img class="kc-photo" src="keychain.png" alt="City Code Keychain">
         </div>
         <div class="kc-hotspots">
           <button class="kc-hot" data-key="code" style="left: 15%; top: 43%; width: 24%; height: 42%; --hc: #d7ff3d;"></button>
@@ -620,20 +609,18 @@ div[class*="manifest"] p:hover {
     </div>
   </div>
   <div class="partners">
-  <a class="partner magnetic" href="https://t.me/thehermesex" target="_blank" rel="noopener">
-    <img class="mark hermes" src="hermes.jpg" alt="Hermes">
-    <small>Hermes Exchange (Financial infra)</small>
-  </a>
-  <a class="partner magnetic" href="https://t.me/NeBankRobot?start=YURICH" target="_blank" rel="noopener">
-    <img class="mark nebank" src="nebank.jpg" alt="Небанк">
-    <small>Небанк App (Financial infra)</small>
-  </a>
-</div>
-<div class="cta-row" style="margin-top:16px">
-</div>
+    <a class="partner magnetic" href="https://t.me/thehermesex" target="_blank" rel="noopener">
+      <img class="mark hermes" src="hermes.jpg" alt="Hermes Exchange">
+      <small>Hermes Exchange (Financial infra)</small>
+    </a>
+    <a class="partner magnetic" href="https://t.me/NeBankRobot?start=YURICH" target="_blank" rel="noopener">
+      <img class="mark nebank" src="nebank.jpg" alt="Небанк App">
+      <small>Небанк App (Financial infra)</small>
+    </a>
+  </div>
 </section>
 
-<!-- ================= 03 CRIMEA RWA ================= -->
+<!-- 03 CRIMEA RWA -->
 <section class="chapter rwa-section" id="rwa">
   <div class="wipe" style="background:var(--bronze)"></div>
   <span class="bg-num" style="right:auto; left:-.03em; color:transparent; -webkit-text-stroke-color:rgba(201,138,78,.12);">03</span>
@@ -662,7 +649,7 @@ div[class*="manifest"] p:hover {
   </div>
 </section>
 
-<!-- ================= 04 COURSE ================= -->
+<!-- 04 COURSE -->
 <section class="chapter" id="course">
   <div class="wipe" style="background:var(--pink)"></div>
   <span class="bg-num">04</span>
@@ -678,7 +665,7 @@ div[class*="manifest"] p:hover {
   </div>
 </section>
 
-<!-- ================= 05 CFA ================= -->
+<!-- 05 CFA -->
 <section class="chapter" id="cfa">
   <div class="wipe" style="background:#2E3D52"></div>
   <span class="bg-num">05</span>
@@ -693,7 +680,7 @@ div[class*="manifest"] p:hover {
   </div>
 </section>  
   
-<!-- ================= THESIS ================= -->
+<!-- THESIS -->
 <section class="thesis">
   <div class="wrap">
     <p class="split">Открытие рождает участие. Участие рождает сообщество. Сообщество рождает экономику. Экономика становится владением.</p>
@@ -720,7 +707,7 @@ div[class*="manifest"] p:hover {
 (function(){
   var isCoarse = window.matchMedia('(pointer: coarse)').matches;
 
-  /* ---------- custom cursor ---------- */
+  /* custom cursor */
   var dot = document.getElementById('curDot');
   var ring = document.getElementById('curRing');
   if(!isCoarse && dot && ring){
@@ -741,7 +728,7 @@ div[class*="manifest"] p:hover {
     });
   }
 
-  /* ---------- magnetic pull ---------- */
+  /* magnetic pull */
   if(!isCoarse){
     document.querySelectorAll('.magnetic').forEach(function(el){
       el.addEventListener('mousemove', function(e){
@@ -754,7 +741,7 @@ div[class*="manifest"] p:hover {
     });
   }
 
-  /* ---------- inertial smooth scroll ---------- */
+  /* inertial smooth scroll & anchors fix */
   var content = document.getElementById('scroll-content');
   var spacer = document.getElementById('scroll-spacer');
   var current = window.scrollY, target = window.scrollY;
@@ -766,8 +753,23 @@ div[class*="manifest"] p:hover {
     setTimeout(setSpacer, 600);
     window.addEventListener('scroll', function(){ target = window.scrollY; });
 
+    /* Плавный перехват якорных ссылок под инерционный скролл */
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor){
+      anchor.addEventListener('click', function(e){
+        var href = this.getAttribute('href');
+        if(href.length > 1){
+          var targetEl = document.querySelector(href);
+          if(targetEl){
+            e.preventDefault();
+            var rect = targetEl.getBoundingClientRect();
+            var absoluteTop = window.scrollY + rect.top;
+            window.scrollTo({ top: absoluteTop, behavior: 'smooth' });
+          }
+        }
+      });
+    });
+
     var heroBg = document.getElementById('heroBg');
-    var heroEl = document.querySelector('.hero');
     var bgNums = document.querySelectorAll('.bg-num');
     var pGlasses = document.getElementById('pGlasses');
 
@@ -786,7 +788,7 @@ div[class*="manifest"] p:hover {
     })();
   }
 
-  /* ---------- scroll reveal (fade-up) ---------- */
+  /* scroll reveal */
   var revealItems = document.querySelectorAll('.reveal');
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(en){
@@ -795,7 +797,7 @@ div[class*="manifest"] p:hover {
   }, { threshold:0.18 });
   revealItems.forEach(function(el){ io.observe(el); });
 
-  /* ---------- word-split reveal for headings ---------- */
+  /* word-split reveal */
   document.querySelectorAll('.split').forEach(function(el){
     var words = el.textContent.trim().split(/\s+/);
     el.innerHTML = words.map(function(w, i){
@@ -809,7 +811,7 @@ div[class*="manifest"] p:hover {
   }, { threshold:0.35 });
   document.querySelectorAll('.split').forEach(function(el){ splitIo.observe(el); });
 
-  /* ---------- City Code interactive keychain ---------- */
+  /* City Code keychain */
   var kcData = {
     code:       { n:'01', title:'Code',           desc:'Свод правил системы: что можно, что нельзя, как устроен доступ и на каких условиях можно потерять членство.' },
     privileges: { n:'02', title:'Privileges',      desc:'Привилегии участников у партнёров — фиксированная скидка или бонус на реальные покупки в сети.' },
@@ -885,7 +887,6 @@ div[class*="manifest"] p:hover {
   }, { threshold:0.12 });
   document.querySelectorAll('section.chapter').forEach(function(el){ wipeIo.observe(el); });
 
-  /* ---------- cursor spotlight in hero ---------- */
   var heroEl2 = document.querySelector('.hero');
   var spot = document.getElementById('spotlight');
   if(heroEl2 && spot){
@@ -898,7 +899,6 @@ div[class*="manifest"] p:hover {
     });
   }
 
-  /* ---------- tilt on keychain photo ---------- */
   var stage = document.querySelector('.keychain-stage');
   var photo = document.querySelector('.kc-tilt');
   if(stage && photo){
